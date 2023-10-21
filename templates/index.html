@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+    <meta charset="UTF-8">
+    <title>NBA Players Investment</title>
+    <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+<div class="login">
+        <div class="scrollable-container">
+            <h1>Predict NBA Players Investment</h1>
+
+            <!-- Main Input For Receiving Query to our ML -->
+            <form action="{{ url_for('classification')}}" method="post">
+                <input type="text" name="GP" id="GP" placeholder="Games Played" required="required"/>
+                <input type="text" name="MIN" id="MIN" placeholder="Minutes Played" required="required"/>
+                <input type="text" name="PTS" id="PTS" placeholder="Points Per Game" required="required"/>
+                <input type="text" name="FGM" id="FGM" placeholder="Field Goals Made" required="required"/>
+                <input type="text" name="FGA" id="FGA" placeholder="Field Goals Attempted" required="required"/>
+                <input type="text" name="3P Made" id="3P Made" placeholder="3-Pointers Made" required="required"/>
+                <input type="text" name="3PA" id="3PA" placeholder="3-Pointers Attempted" required="required"/>
+                <input type="text" name="FTM" id="FTM" placeholder="Free Throws Made" required="required"/>
+                <input type="text" name="FTA" id="FTA" placeholder="Free Throws Attempted" required="required"/>
+                <input type="text" name="OREB" id="OREB" placeholder="Offensive Rebounds" required="required"/>
+                <input type="text" name="DREB" id="DREB" placeholder="Defensive Rebounds" required="required"/>
+                <input type="text" name="REB" id="REB" placeholder="Total Rebounds" required="required"/>
+                <input type="text" name="AST" id="AST" placeholder="Assists" required="required"/>
+                <input type="text" name="STL" id="STL" placeholder="Steals" required="required"/>
+                <input type="text" name="BLK" id="BLK" placeholder="Blocks" required="required"/>
+                <input type="text" name="TOV" id="TOV" placeholder="Turnovers" required="required"/>
+
+
+                <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+            </form>
+
+            <br>
+            <br>
+            {{ prediction_text }}
+
+        </div>
+    </div>
+</body>
+</html>
