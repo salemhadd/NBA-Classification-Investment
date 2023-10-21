@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # NBA Player Investment Classifier
 
 **Overview**
@@ -63,6 +62,4 @@ This project provides a solution to predict the investment potential of NBA play
 
 For any questions or clarifications, please contact [Salem Haddad / salem.haddadbecha@gmail.com].
 
-=======
-# NBA-Classification-Investment
->>>>>>> origin/master
+ 
